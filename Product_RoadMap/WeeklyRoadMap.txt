@@ -1,0 +1,42 @@
+From 21 Januray 2019,
+1st Week ( till 26 Jan ) : 	
+	Scrum meeting about Agile Mode of Development	
+	Market Analysis [ Discussion with users and stake holders ]
+
+From 27 Jan, 2019
+2nd Week ( till 2 Feb ) :
+	Scrum meeting
+	Discover of API from various food delivery service.
+
+From 3rd Feb, 2019
+3rd Week ( till 9th Feb ) :
+	Scrum meeting
+	Demo working API of various food delivery service discovered in previous meeting.
+
+From 10th Feb, 2019
+4th Week ( till 16th Feb ) :
+	Scrum meeting
+	Some Work in FrontEnd ( Hompage ) and display page.
+
+From 17th Feb, 2019
+5th Week ( till 23th Feb ) :
+	Scrum meeting
+	Adding Location Auto Detection Features.
+
+From 24th Feb, 2019
+6th Week ( till 2nd March ) :
+	MidSem
+
+From 3rd March, 2019
+7th Week ( till 9 March ) :
+	Scrum meeting
+	BackEnd Part of Works Starts..... Integeration of those API in the actual product .... Building Phase 1
+ 
+8th Week : 
+	Building phase 2  ---- Some Filter System 
+
+9th Week :
+	Building phase 3  ---- Some Comparsion of data part.
+
+10th Week :
+	Adding FeedBack or Review Type System.
