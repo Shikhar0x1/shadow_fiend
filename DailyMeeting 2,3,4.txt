@@ -1,0 +1,59 @@
+Who has a stake in the solution to the problem?
+Restaurants and the food delivery service ( zomato, swigz )
+
+What are the unknowns? What data, functions, and features are required to properly solve the problem?
+Well, for staters, we dont have any API that can provided us the data of food, restaurant from the food delivery service.
+To handle lot of data and quicky find the best deal will require good algo for sorting.
+Compare based on price discounts , better delivery time for a service.
+
+Can the problem be compartmentalized? Is it possible to represent smaller problems that may be easier to understand? 
+Yes.
+1. Input from user - user field and location detection
+2. Quickly use the different services to get results.
+3. Handling that data , compare the deals and delivery time bwtween food delivery service.
+4. Display the result
+5. According to user input, proceed to that service.
+
+Can the problem be represented graphically? Can an analysis model be created?
+In presentation
+
+Have you seen similar problems before? Are there patterns that are recognizable in a potential solution? Is there existing software that implements the data, functions, and features that are required?
+Yeah, Trivago handles sort of same problem but in different field.
+Fetching of the data from other service is most part of the problem and is similiar.
+But no there is no existing API available in food delievery service department and in case trivago case, hotel API is now available [ Expedia Affiliate Network (EAN) ].
+
+Has a similar problem been solved? If so, are elements of the solution reusable?
+Sort of but in different field.
+Frontend part like input and display is easy to handle.
+Backend part is generally not made avaialable to general public so kind of hard to deal and find reuseable solution.
+
+Can subproblems be defined? If so, are solutions readily apparent for the subproblems?
+As mentioned above ,
+1. Input from user - user field and location detection  
+======  Frontend part ( HTML, CSS, Javascript, maybe django or NodeJS and The Geolocation API )
+2. Quickly use the different services to get results.
+======  If we can find some API or else we will use web scrapping.
+3. Handling that data , compare the deals and delivery time bwtween food delivery service.
+======  Some sorting algo.
+4. Display the result
+======  FrontEnd Part again.
+5. According to user input, proceed to that service.
+======  Redirecting to a site.
+
+Can you represent a solution in a manner that leads to effective implementation? Can a design model be created?
+In Presentation.
+
+Does the solution conform to the plan? Is source code traceable to the design model?
+It should in theory atleast. Since we havent started developing yet so lot of parameter are unknows for us.
+
+Is each component part of the solution provably correct? Has the design and code been reviewed, or better, have correctness proofs been applied to algorithm?
+Not yet.
+
+Is it possible to test each component part of the
+solution? Has a reasonable testing strategy been
+implemented?
+It is possible as we defined the problem in sub problem and we will be easily able to see the solution.
+Not test though.
+
+Does the solution produce results that conform to the data, functions, and features that are required? Has the software been validated against all stakeholder requirements?
+Doubts....
