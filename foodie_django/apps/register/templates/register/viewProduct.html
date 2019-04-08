@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load staticfiles %}
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ViewProduct | foodie</title>
+    <link href="{% static 'register/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'register/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'register/price-range.css' %}" rel="stylesheet">
+    <link href="{% static 'register/animate.css' %}" rel="stylesheet">
+	  <link href="{% static 'register/main.css' %}" rel="stylesheet">
+	  <link href="{% static 'register/responsive.css' %}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/"><img src="{% static 'register/images/home/logo.png' %}" alt="" /></a>
+						</div>
+						<div class="btn-group pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									Guwahati, India
+									<span class="caret"></span>
+								</button>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+                 {% if request.session.id %}
+                 <li><a href="/"><i class="fa fa-lock"></i> Hello, {{ request.session.name }}</a></li>
+                 <li><a href="/logout"><i class="fa fa-lock"></i> Logout</a></li>
+                 {% else %}
+                 <li><a href="/loginPage"><i class="fa fa-lock"></i> Login</a></li>
+                 {% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-11">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+          <br><br>
+          <br><br>
+          <br><br>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Services :</h2>
+              <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="https://www.zomato.com/" data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											Zomato
+										</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="https://www.swiggy.com/" data-toggle="collapse" data-parent="#accordian" href="#mens">
+											Swiggy
+										</a>
+									</h4>
+								</div>
+
+							</div>
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="https://www.ubereats.com/" data-toggle="collapse" data-parent="#accordian" href="#womens">
+											UberEats
+										</a>
+									</h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="blog-post-area">
+						<h2 class="title text-center">Product Details</h2>
+						<div class="single-blog-post">
+							<h3><?php echo $productName; ?></h3>
+							<div class="post-meta">
+								<ul>
+                  <li><i class="fa fa-dollar"></i> Rs. <?php echo $price; ?></li>
+									<li><i class="fa fa-user"></i> <?php echo $sellerName; ?></li>
+									<li><i class="fa fa-clock-o"></i> <?php echo $sellerPhone; ?></li>
+									<li><i class="fa fa-calendar"></i> MARCH 7, 2019</li>
+								</ul>
+								<span>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-half-o"></i>
+								</span>
+							</div>
+							<a href="">
+								<img src="<?php echo $image; ?>" alt="" height="500px;" width="400px;">
+							</a>
+							<div class="pager-area">
+								<a href="https://www.zomato.com/guwahati/restaurants/?q=<?php echo $productName; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Rs. <?php echo $price-1; ?> - Buy It on Zomato</a>
+							</div>
+                            <div class="pager-area">
+								<a href="https://www.swiggy.com/search?q=<?php echo $productName; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Rs. <?php echo $price; ?> - Buy It on Swiggy</a>
+							</div>
+                            <div class="pager-area">
+								<a href="https://www.ubereats.com/en-IN/search/?q=<?php echo $productName; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Rs. <?php echo $price+1; ?> - Buy It on UberEats</a>
+							</div>
+						</div>
+					</div><!--/blog-post-area-->
+
+					</div><!--Comments-->
+					<div class="response-area">
+						<h2>1 RESPONSES</h2>
+						<ul class="media-list">
+							<li class="media">
+
+								<a class="pull-left" href="#">
+									<img class="media-object" src="{% static 'register/images/home/man-two.jpg' %}" alt="">
+								</a>
+								<div class="media-body">
+									<ul class="sinlge-post-meta">
+										<li><i class="fa fa-user"></i>Janis Gallagher</li>
+										<li><i class="fa fa-clock-o"></i> 1:33 pm</li>
+										<li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
+									</ul>
+									<p>
+									Good quality product.
+									</p>
+									<a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Replay</a>
+								</div>
+							</li>
+												</ul>
+					</div><!--/Response-area-->
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <footer id="footer"><!--Footer-->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 ">
+                        <div class="companyinfo">
+                            <h2><span>foodie</span></h2>
+                            <p>One Stop Solution for searching food for best price</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="address">
+                            <img src="{% static 'register/images/home/map.png' %}" alt="" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!--/Footer-->
+
+
+  <script src="{% static 'register/js/jquery.js' %}"></script>
+  <script src="{% static 'register/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.scrollUp.min.js' %}"></script>
+  <script src="{% static 'register/js/price-range.js' %}"></script>
+  <script src="{% static 'register/js/jquery.prettyPhoto.js' %}"></script>
+  <script src="{% static 'register/js/main.js' %}"></script>
+</body>
+</html>
