@@ -27,6 +27,7 @@ class RegisterTest(TestCase):
 
         self.assertEqual(resp.status_code, 200)
 
+'''
 ##unittest
 class TestLogin(unittest.TestCase):
 
@@ -50,6 +51,6 @@ class TestLogin(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit
-
+'''
 if __name__ == '__main__':
     unittest.main()
