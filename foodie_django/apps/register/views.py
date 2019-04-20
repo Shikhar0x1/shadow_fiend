@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.template import loader
 from django.contrib import messages
 import bcrypt
 from models import User
@@ -37,12 +38,38 @@ def login(request):
             return redirect('/')
     return redirect('/')
 
-def success(request):
-    user = User.objects.get(id=request.session['id'])
-    context = {
-        "user": user
-    }
-    return render(request, 'register/success.html', context)
 
-def viewProduct(request):
-    return render(request, 'register/viewProduct.html')
+def viewProduct(request, product_id):
+
+    if(product_id == '1'):
+        name = 'Veg Chow'
+        image = "/static/register/images/chow.jpeg"
+        print('chow')
+    elif(product_id == '2'):
+        name = 'Egg Roll'
+        image = "/static/register/images/eggroll.jpg"
+        print('roll')
+    elif(product_id == '3'):
+        name = 'Veg Burger'
+        image = "/static/register/images/burger.jpeg"
+        print('burger')
+    elif(product_id == '4'):
+        name = 'Pizza'
+        image = "/static/register/images/pizza.jpeg"
+        print('pizza')
+    elif(product_id == '5'):
+        name = 'Chicken Momo'
+        image = "/static/register/images/momo.jpeg"
+        print('momo')
+    elif(product_id == '6'):
+        name = 'Masala Dosa'
+        image = "/static/register/images/dosa.jpg"
+        print('dosa')
+
+    data = {
+        'name' : name,
+        'image' : image
+    }
+    #return render(request, 'register/viewProduct.html')
+    template = loader.get_template('register/viewProduct.html')
+    return HttpResponse(template.render(data, request))

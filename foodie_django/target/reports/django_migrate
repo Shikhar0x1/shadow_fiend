@@ -1,0 +1,9 @@
+Operations to perform:
+  Synchronize unmigrated apps: staticfiles, django_jenkins, messages
+  Apply all migrations: admin, contenttypes, register, auth, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  No migrations to apply.
