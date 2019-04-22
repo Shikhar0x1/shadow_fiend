@@ -83,7 +83,7 @@ class TestLogin(unittest.TestCase):
     def create_register(self, first_name="Test", last_name="Test", email="test@test.com", password="test1234"):
         return User.objects.create(first_name=first_name, last_name=last_name, email=email, password=password)
 
-   '''
+    '''
     def setUp(self):
         self.driver = webdriver.Firefox(executable_path=r'/home/shikhar/geckodriver')
 
