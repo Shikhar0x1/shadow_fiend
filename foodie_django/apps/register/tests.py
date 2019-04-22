@@ -11,7 +11,7 @@ from selenium import webdriver
 # models test
 class RegisterTest(TestCase):
 
-    def create_register(self, first_name="first", last_name="last", email="test@test.com", password="test"):
+    def create_register(self, first_name="first", last_name="last", email="test@test.com", password="test12345"):
         return User.objects.create(first_name=first_name, last_name=last_name, email=email, password=password)
 
     def test_register_creation(self):
@@ -37,6 +37,21 @@ class RegisterTest(TestCase):
         url = reverse("apps.register.views.loginPage")
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
+
+    # def test_login_homepage_view(self):
+    #     w = self.create_register()
+    #     data = {
+    #         'login_email' : 'test@test.com',
+    #         'login_password' : 'test12345'
+    #     }
+    #     url = reverse("apps.register.views.login")
+    #     resp = self.client.post(url, data)
+    #
+    #    self.assertEqual(resp.status_code, 200)
+
+    def test_logout_homepage_view(self):
+        url = reverse("apps.register.views.logout")
+        resp = self.client.get(url)
 
     # def testViewProductURL(self):
     #     url = reverse("apps.register.views.viewProduct")
@@ -68,7 +83,7 @@ class TestLogin(unittest.TestCase):
     def create_register(self, first_name="Test", last_name="Test", email="test@test.com", password="test1234"):
         return User.objects.create(first_name=first_name, last_name=last_name, email=email, password=password)
 
-
+   '''
     def setUp(self):
         self.driver = webdriver.Firefox(executable_path=r'/home/shikhar/geckodriver')
 
@@ -97,6 +112,7 @@ class TestLogin(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit
+    '''
 
 # if __name__ == '__main__':
 #     unittest.main()

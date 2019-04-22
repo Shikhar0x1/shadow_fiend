@@ -68,98 +68,79 @@
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
+  <div style="width: 100%; height:250px; background:#FE980F">
+    <div class="col-sm-4">
+            <img src="{% static 'register/images/chow.jpeg' %}" alt="" height="250px" width="250px" style="margin-left: 150px;" />
+    </div>
+    <div class="col-sm-4" style="height: 250px; color: white;">
+      <br><br>
+      <h2> {{ name }} </h2>
+      <h5> of {{ price }}</h5>
+      <h5> from {{ restaurant }}</h5>
+      <h5> located at {{ address }}</h5>
+    </div>
+    <div class="col-sm-4" style="height: 250px; color: white;">
+      <br><br><br><br><br>
+      <div class="pager-area" style="width: 300px;">
+        <a href="https://www.zomato.com/guwahati/restaurants/?q={{ name }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Best Deals - {{ price }} - Buy It on Zomato<br>{{ offerZ }}</a>
+      </div>
+    </div>
+  </div>
+  <br><br>
 
 	<section>
+    <br>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Services :</h2>
-              <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="https://www.zomato.com/" data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											Zomato
-										</a>
-									</h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="https://www.swiggy.com/" data-toggle="collapse" data-parent="#accordian" href="#mens">
-											Swiggy
-										</a>
-									</h4>
-								</div>
+    			<div class="col-sm-12" style="padding-left:200px;">
+    				<div class="blog-post-area">
+    					<div class="single-blog-post">
+                <div class="pager-area" style="width: 300px; display:inline">
+                  <a href="https://www.zomato.com/guwahati/restaurants/?q={{ name }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i> {{ price }} - Buy It on Zomato<br>{{ offerZ }}</a>
+                </div>
+                <div class="pager-area" style="width: 300px; display:inline">
+                  <a href={{ url }} class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i> {{ price }} - Buy It on Swiggy<br>{{ offersS }}</a>
+                </div>
+                <div class="pager-area" style="width: 300px; display:inline">
+                  <a href="https://www.ubereats.com/en-IN/search/?q={{ name }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i> {{ price }} - Buy It on UberEats<br>{{ offerU }}</a>
+                </div>
+                <br><br>
+                First Time Using these services :
+                <br><br>
+                <div class="pager-area" style="display: inline">
+                  <a class="btn btn-default add-to-cart">
+                  Use ORDERIT to get 50% off on <br>Zomato for first time users only
+                  </a>
+                </div>
+                <div class="pager-area" style="display: inline">
+                  <a class="btn btn-default add-to-cart">
+                  Use SWIGGYIT to get 50% off on <br>Swiggy for first time users only
+                  </a>
+                </div>
+                <div class="pager-area" style="display: inline">
+                  <a class="btn btn-default add-to-cart">
+                  Use UEFIRST to get 50% off on <br>UberEats for first time users only
+                  </a>
+                </div>
+    					</div>
+    				</div><!--/blog-post-area-->
+    			</div><!--Comments-->
 
-							</div>
-
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="https://www.ubereats.com/" data-toggle="collapse" data-parent="#accordian" href="#womens">
-											UberEats
-										</a>
-									</h4>
-								</div>
-							</div>
-						</div><!--/category-products-->
-					</div>
-				</div>
-				<div class="col-sm-9">
-					<div class="blog-post-area">
-						<h2 class="title text-center">Product Details</h2>
-						<div class="single-blog-post">
-							<h2>{{ name }}</h2>
-              <br>
-							<div class="post-meta">
-								<ul>
-                  <li><i class="fa fa-dollar"></i> Rs. <?php echo $price; ?></li>
-									<li><i class="fa fa-user"></i> <?php echo $sellerName; ?></li>
-									<li><i class="fa fa-clock-o"></i> <?php echo $sellerPhone; ?></li>
-									<li><i class="fa fa-calendar"></i> MARCH 7, 2019</li>
-								</ul>
-								<span>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-half-o"></i>
-								</span>
-							</div>
-							<img src='{% static image %}' alt="" height="500px;" width="400px;">
-
-							<div class="pager-area">
-								<a href="https://www.zomato.com/guwahati/restaurants/?q={{ name }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Rs. <?php echo $price-1; ?> - Buy It on Zomato</a>
-							</div>
-                            <div class="pager-area">
-								<a href="https://www.swiggy.com/search?q=<?php echo $productName; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Rs. <?php echo $price; ?> - Buy It on Swiggy</a>
-							</div>
-                            <div class="pager-area">
-								<a href="https://www.ubereats.com/en-IN/search/?q=<?php echo $productName; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Rs. <?php echo $price+1; ?> - Buy It on UberEats</a>
-							</div>
-						</div>
-					</div><!--/blog-post-area-->
-
-					</div><!--Comments-->
 					<div class="response-area">
 						<h2>1 RESPONSES</h2>
 						<ul class="media-list">
 							<li class="media">
-
 								<a class="pull-left" href="#">
 									<img class="media-object" src="{% static 'register/images/home/man-two.jpg' %}" alt="">
 								</a>
 								<div class="media-body">
 									<ul class="sinlge-post-meta">
-										<li><i class="fa fa-user"></i>Janis Gallagher</li>
+										<li><i class="fa fa-user"></i>Shikhar Yadav</li>
 										<li><i class="fa fa-clock-o"></i> 1:33 pm</li>
-										<li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
+										<li><i class="fa fa-calendar"></i> MARCH 5, 2019</li>
 									</ul>
 									<p>
-									Good quality product.
+									Good quality food.
 									</p>
 									<a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Replay</a>
 								</div>
